@@ -47,10 +47,13 @@ int main()
                 else
                 {
                     curr_time += arr[i].remaining_bt;
+
                     arr[i].remaining_bt = 0;
+
                     arr[i].ct = curr_time;
                     arr[i].tat = arr[i].ct - arr[i].at;
                     arr[i].wt = arr[i].tat - arr[i].bt;
+
                     total_tat += arr[i].tat;
                     total_wt += arr[i].wt;
                     completed++;

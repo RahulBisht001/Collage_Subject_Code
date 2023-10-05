@@ -1,24 +1,28 @@
 #include <stdio.h>
-struct process {
+struct process
+{
     int pid;
     int at;
     int bt;
-    int remaining_bt; 
+    int remaining_bt;
     int ct;
     int tat;
     int wt;
     int priority;
 };
 
-int main() {
+int main()
+{
     int n;
     printf("Enter the number of processes: ");
     scanf("%d", &n);
 
     struct process arr[n];
+
     int total_tat = 0, total_wt = 0, curr_time = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         arr[i].pid = i + 1;
         printf("Enter the arrival time, burst time, and priority of %d process: ", arr[i].pid);
         scanf("%d %d %d", &arr[i].at, &arr[i].bt, &arr[i].priority);
@@ -27,23 +31,29 @@ int main() {
 
     int completed = 0, idle_time = 0;
 
-    while (completed != n) {
+    while (completed != n)
+    {
         int idx = -1;
         int min_priority = 1e9;
-        
-        for (int i = 0; i < n; i++) {
-            if (arr[i].at <= curr_time && arr[i].remaining_bt > 0) {
-                if (arr[i].priority < min_priority || 
-                    (arr[i].priority == min_priority && arr[i].at < arr[idx].at)) {
+
+        for (int i = 0; i < n; i++)
+        {
+            if (arr[i].at <= curr_time && arr[i].remaining_bt > 0)
+            {
+                if (arr[i].priority < min_priority ||
+                    (arr[i].priority == min_priority && arr[i].at < arr[idx].at))
+                {
                     min_priority = arr[i].priority;
                     idx = i;
                 }
             }
         }
 
-        if (idx != -1) {
+        if (idx != -1)
+        {
             arr[idx].remaining_bt--;
-            if (arr[idx].remaining_bt == 0) {
+            if (arr[idx].remaining_bt == 0)
+            {
                 completed++;
                 arr[idx].ct = curr_time + 1;
                 arr[idx].tat = arr[idx].ct - arr[idx].at;
@@ -52,7 +62,9 @@ int main() {
                 total_wt += arr[idx].wt;
             }
             curr_time++;
-        } else {
+        }
+        else
+        {
             curr_time++;
             idle_time++;
         }
@@ -65,7 +77,7 @@ int main() {
     printf("-----------------------------------------------------------------\n");
     printf("| Process | BT  | Priority | CT    | TAT   | WT    |\n");
     printf("-----------------------------------------------------------------\n");
-    for (int i = 0; i < n; i++)    
+    for (int i = 0; i < n; i++)
         printf("| %d\t  | %d\t| %d\t   | %d\t   | %d\t   | %d\t   |\n", arr[i].pid, arr[i].bt, arr[i].priority, arr[i].ct, arr[i].tat, arr[i].wt);
     printf("-----------------------------------------------------------------\n");
 
