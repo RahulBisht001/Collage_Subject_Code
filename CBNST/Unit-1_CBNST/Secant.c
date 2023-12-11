@@ -7,8 +7,9 @@
 
 float f(float x)
 {
-    // return x * x * x - 5 * x + 1;
-    return (cos(x) - x * exp(x));
+    // return x * x * x - 5 * x + 1 + asin() used for sin inverse
+    // return (cos(x) - x * exp(x));
+    return (x * x * x) - 5 * x + 3;
 }
 
 float findX(float x1, float x2)
