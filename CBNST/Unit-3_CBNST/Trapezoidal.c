@@ -1,7 +1,7 @@
 /*
  * Trapezoidal Method
  * The Formula is
- * ans = h/2 * [(y0 + yn) + 2 * (y1....yn)]
+ * ans = h/2 * [(y0 + yn) + 2 * (y(1)....y(n-1))]
  */
 
 /*

@@ -14,8 +14,8 @@ float value(float x)
 
 int main()
 {
-    int n, position_of_term = 1;
-    float a, b, sum = 0, h;
+    int n = 0, position_of_term = 1;
+    float a = 0, b = 0, sum = 0;
 
     printf("Enter the value of a and b : ");
     scanf("%f %f", &a, &b);
@@ -23,10 +23,10 @@ int main()
     printf("Enter the number of intervals : ");
     scanf("%d", &n);
 
-    h = (b - a) / n;
+    float h = (b - a) / n;
     sum = value(a) + value(b);
 
-    for (int i = a + h; i < b; i += h)
+    for (float i = a + h; i < b; i += h)
     {
         sum += (position_of_term % 3 == 0) ? 2 * value(i) : 3 * value(i);
         position_of_term++;
@@ -41,41 +41,41 @@ int main()
 
 //* *******************************************************************************************
 
-#include <stdio.h>
+// #include <stdio.h>
 
-float f(float x)
-{
-    return 1.0 / (1 + (x * x));
-}
+// float f(float x)
+// {
+//     return 1.0 / (1 + (x * x));
+// }
 
-int main()
-{
-    int n, position_of_term = 1;
-    float a, b;
-    float sum = 0;
+// int main()
+// {
+//     int n, position_of_term = 1;
+//     float a, b;
+//     float sum = 0;
 
-    printf("Enter the value of a: ");
-    scanf("%f", &a);
+//     printf("Enter the value of a: ");
+//     scanf("%f", &a);
 
-    printf("Enter the value of b: ");
-    scanf("%f", &b);
+//     printf("Enter the value of b: ");
+//     scanf("%f", &b);
 
-    printf("Enter the value of n (Number of Intervals): ");
-    scanf("%d", &n);
+//     printf("Enter the value of n (Number of Intervals): ");
+//     scanf("%d", &n);
 
-    float h = (b - a) / n;
+//     float h = (b - a) / n;
 
-    sum += f(a) + f(b);
+//     sum += f(a) + f(b);
 
-    for (int i = a + h; i < b; i += h)
-    {
-        sum += (position_of_term % 3 == 0) ? 2 * f(i) : 3 * f(i);
-        position_of_term++;
-    }
+//     for (int i = a + h; i < b; i += h)
+//     {
+//         sum += (position_of_term % 3 == 0) ? 2 * f(i) : 3 * f(i);
+//         position_of_term++;
+//     }
 
-    sum = (h * sum * 3) / 8;
+//     sum = (h * sum * 3) / 8;
 
-    printf("\nValue of the integral = %f\n", sum);
+//     printf("\nValue of the integral = %f\n", sum);
 
-    return 0;
-}
+//     return 0;
+// }
