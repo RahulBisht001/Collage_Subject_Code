@@ -1,5 +1,16 @@
+/*
+ * Runga-Kutta : (Order 4)
+
+ * Formula is : y(n+1) = y(n) + (h/6)*(k1 + 2*k2 + 2*k3 + k4)
+ */
+
 #include <stdio.h>
 #include <math.h>
+
+// double fx(double x, double y)
+// {
+//     return (y * y - x * x) / (y * y + x * x);
+// }
 
 double fx(double x, double y)
 {
@@ -15,17 +26,19 @@ double rungeKutta(double x, double y, double h)
     k3 = h * fx(x + h / 2.0, y + k2 / 2.0);
     k4 = h * fx(x + h, y + k3);
 
-    return y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0;
+    double ans = y + (k1 + 2 * k2 + 2 * k3 + k4) / 6.0;
+    return ans;
 }
 
 int main()
 {
+
     double x, y, target, h;
 
-    printf("Enter the initial values of x and y respectively: ");
+    printf("Enter the value of x & y respectively \n");
     scanf("%lf %lf", &x, &y);
 
-    printf("Enter the value of x where we have to calculate y: ");
+    printf("Enter the value of x where we have to calculate y\n");
     scanf("%lf", &target);
 
     printf("Enter the step size: ");
@@ -33,12 +46,14 @@ int main()
 
     int steps = (target - x) / h;
 
-    for (int i = 0; i < steps; i++)
+    for (int i = 0; i <= steps; ++i)
     {
+        printf("x = %f   y = %f\n", x, y);
         y = rungeKutta(x, y, h);
         x += h;
     }
 
+    printf("-------------------");
     printf("y(%lf) = %lf\n", target, y);
 
     return 0;
