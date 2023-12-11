@@ -44,10 +44,12 @@ int main()
     int x;
     printf("Enter the value of x : ");
     scanf("%d", &x);
+
     double p = (x - observation[0][0]) / (observation[1][0] - observation[0][0]);
 
     int fac = 1;
     double ans = observation[0][1];
+
     for (int j = 2; j < n + 1; j++)
     {
         double temp = p;
@@ -58,6 +60,7 @@ int main()
         }
         temp /= (double)fac;
         ans += temp;
+
         fac *= j;
     }
 
