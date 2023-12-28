@@ -1,0 +1,12 @@
+Ques - What are the different pre processing method require to prepare a dataset?
+Ques - What kind of problem can be tackle using ML?
+Ques - What are the standard learning tasks include in ML?
+Ques - What are the different learning stages in ML?
+Ques - Explain the different possible conditions of SVM with the help of example.
+Ques - Explain information gain and gini Index ( Role in splitting ) .
+Ques - How can you identify outlier in a dataset using SVM ?
+Ques - What are the major difference b/w SVM, KNN and decision trees with examples.
+Ques - What are outliers? Explain with the help of boxplot.
+Ques - Working concept of K- fold cross validation.
+Ques - What is Booststrapping.Explain with the help of validating the dataset.
+Ques - Explain bagging and justify significance of Adaboost Algorithm.
