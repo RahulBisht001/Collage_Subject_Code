@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <fieldset style="background-color: hsl(237, 100%, 88%);">
+            <legend>Customer Details</legend>
+            <br>
+            <form>
+                <label>Name : </label>
+                <input type="text" name="name">
+                <br><br>
+                <label>Address : </label>
+                <input type="text" name="address">
+                <br><br>
+                <label>Age :</label>
+                <input type="number" name="age">
+                <br><br>
+                <div style="display: flex;">
+                    <label>Gender: </label>
+                    <input type="radio" id="gender" name="gender" value="male">
+                    <label for="gender">MALE</label><br>
+
+                    <input type="radio" id="gender" name="gender"
+                        value="female">
+                    <label for="gender">FEMALE</label><br>
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <label>Room : </label>
+                    <input type="radio" id="room" name="room">
+                    <label for="room">A/C</label><br>
+
+                    <input type="radio" id="room" name="room">
+                    <label for="room">Non A/C</label><br>
+
+                    <input type="radio" id="room" name="room">
+                    <label for="room">Deluxe</label><br>
+
+                </div>
+                <br>
+                <label for="type">Mode of Payment :</label>
+                <select id="type" name="type">
+                    <option value></option>
+                    <option value="CASH">CASH</option>
+                    <option value="DEBIT">DEBIT</option>
+                    <option value="Credit">CREDIT</option>
+                    <option value="COUPONS">COUPONS</option>
+                </select><br><br>
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+    <form>
+        <fieldset style="background-color:rgb(110, 110, 231);">
+            <legend>Basic Information:</legend>
+            <br>
+    <label>Full Name :</label>
+    <input type="text" name="name"><br><br>
+
+    <label>Birth Date</label>
+    <input type="text" name="DOB"><br><br>
+
+    <div style="display: flex;">
+    <label>Gender:  </label>
+    <input type="radio" id="gender" name="gender" value="male">
+    <label for="gender">MALE</label><br>
+
+    <input type="radio" id="gender" name="gender" value="female">
+    <label for="gender">FEMALE</label><br>
+
+    </div>
+
+    <br>
+    <label for="address">Address :</label>
+    <input type="text">
+    <!-- <textarea id="address" rows="6"></textarea> -->
+    <br><br>
+
+    <!-- <label>Email :</label>
+    <input type="email" name="email"><br><br> -->
+
+    <label>Phone Number :</label>
+    <input type="number" name="phone_number" method="post"><br><br>
+</fieldset>
+    <!-- <label for="type">Card Type :</label>
+    <select id="type" name="type">
+        <option value=""></option>
+        <option value="VISA">VISA</option>
+        <option value="DEBIT">DEBIT</option>
+        <option value="Credit">CREDIT</option>
+    </select><br><br> -->
+
+    <!-- <label>Expiration Date</label>
+    <input type="date" name="expiry"><br><br>
+
+    <label>CVV</label>
+    <input type="password" name="CVV" method="post"><br><br>
+
+    <button>Pay Now</button> -->
+    </form>
+    <form>
+        <fieldset style="background-color: #8f8ff3;">
+            <legend>Extra Information</legend>
+            <div style="display: flex;"
+            <label>Interests :   </label>
+    <input type="checkbox" id="interest" name="book">
+    <label for="book">Books</label><br>
+
+    <input type="checkbox" id="interest" name="Movie">
+    <label for="Movie">Movies</label><br>
+
+    <input type="checkbox" id="interest" name="VG">
+    <label for="VG">VideoGames</label><br>
+</div>
+<br>
+    <label> Favourite Color :</label>
+    <input type="text" name="color">
+    </fieldset>
+        </fieldset>
+    </form>
+    <br>
+    <button>Send Data</button>
+    <button>  Reset Form</button>
+</body>
+</html>
