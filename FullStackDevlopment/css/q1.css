@@ -1,0 +1,11 @@
+a {
+	color: red;
+	text-decoration: none;
+}
+
+a:active {
+	color: blue;
+}
+a:visited {
+	color: green;
+}

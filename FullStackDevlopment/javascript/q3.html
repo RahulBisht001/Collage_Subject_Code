@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Greetings</title>
+        <h1 id="greeting"></h1>
+        <h2 id="time"></h2>
+    </head>
+    <body>
+        <script>
+            const greetUser = () => {
+                let today = new Date();
+                let currHour = today.getHours();
+
+                let greeting;
+                if (currHour == 12) {
+                    greeting = "Good Noon Rahul!";
+                } else if (currHour < 12) {
+                    greeting = "Good Morning Rahul!";
+                } else if (currHour < 18) {
+                    greeting = "Good Afternoon Rahul!";
+                } else {
+                    greeting = "Good Evening Rahul!";
+                }
+                const hours = String(today.getHours()).padStart(2, "0");
+                const minutes = String(today.getMinutes()).padStart(2, "0");
+                const seconds = String(today.getSeconds()).padStart(2, "0");
+
+                const time = `${hours}:${minutes}:${seconds}`;
+
+                document.getElementById("greeting").innerHTML = greeting;
+                document.getElementById("time").innerHTML = time;
+
+                console.log("Hi");
+            };
+
+            // Display the initial greeting
+            greetUser();
+
+            // Update the greeting every minute
+            setInterval(greetUser, 1000);
+        </script>
+    </body>
+</html>

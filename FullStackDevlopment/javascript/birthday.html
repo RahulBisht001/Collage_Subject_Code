@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Enter the BirthDate</h2>
+        <input type="date" id="birthdate" />
+        <button id="btn">Check the day</button>
+    </body>
+    <script>
+        const checkThDay = () => {
+            let inputDate = document.getElementById("birthdate").value;
+
+            let birthDate = new Date(inputDate);
+            const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            const dayIdx = birthDate.getDay();
+
+            alert("You were born on a " + weekdays[dayIdx] + ".");
+        };
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkThDay);
+    </script>
+</html>

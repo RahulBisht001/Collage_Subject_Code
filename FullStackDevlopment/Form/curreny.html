@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML Table with Attributes</title>
+    </head>
+    <body>
+        <h2>HTML Table with Attributes</h2>
+
+        <table border="1" cellspacing="0" cellpadding="5" width="100%">
+            <caption>
+                This is a table caption
+            </caption>
+            <colgroup>
+                <col span="2" style="background-color: #f2f2f2" />
+                <col style="background-color: #d9d9d9" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">Header 1</th>
+                    <th scope="col">Header 2</th>
+                    <th scope="col">Header 3</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="3" align="center">Footer</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td headers="h1">Row 1, Column 1</td>
+                    <td headers="h2">Row 1, Column 2</td>
+                    <td headers="h3">Row 1, Column 3</td>
+                </tr>
+                <tr>
+                    <td headers="h1">Row 2, Column 1</td>
+                    <td headers="h2">Row 2, Column 2</td>
+                    <td headers="h3">Row 2, Column 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

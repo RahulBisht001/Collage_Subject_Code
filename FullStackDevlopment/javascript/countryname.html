@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Country Quiz</h2>
+
+        <label for="countries">Select the Country : </label>
+        <select id="countries">
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Russia">Russia</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Japan">Japan</option>
+            <option value="Colombia">Colombia</option>
+        </select>
+
+        <br />
+        <br />
+        <label for="capitals">Select its capital : </label>
+        <select id="capitals">
+            <option value="Moscow">Moscow</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Bangkok">Bangkok</option>
+            <option value="Washington, D.C.">Washington, D.C.</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Bogotá">Bogotá</option>
+        </select>
+
+        <button id="btn">Check Answer</button>
+        <script>
+            const countryCapitals = {
+                India: "New Delhi",
+                USA: "Washington, D.C.",
+                Russia: "Moscow",
+                Japan: "Tokyo",
+                Thailand: "Bangkok",
+                Colombia: "Bogotá",
+            };
+
+            const checkAnswer = () => {
+                const country = document.getElementById("countries").value;
+                const inputCapital = document.getElementById("capitals").value;
+
+                const correctCapital = countryCapitals[country];
+
+                if (correctCapital === inputCapital) {
+                    alert("Great Buddy! you are right");
+                } else {
+                    alert(`Htt boka chodo ! Correct answer is -> ${country}'s capital is ${correctCapital}`);
+                }
+            };
+
+            const check = document.getElementById("btn");
+            check.addEventListener("click", checkAnswer);
+        </script>
+    </body>
+</html>

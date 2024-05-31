@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day of the Week Calculator</title>
+    </head>
+    <body>
+        <h2>Day of the Week Calculator</h2>
+        <p>Enter your birthdate:</p>
+        <input type="date" id="birthdate" />
+        <button onclick="calculateDay()">Calculate of the Week</button>
+
+        <script>
+            function calculateDay() {
+                // Get the value of the input field (birthdate)
+                var inputDate = document.getElementById("birthdate").value;
+
+                // Convert the input date string to a Date object
+                var birthDate = new Date(inputDate);
+
+                // Array of weekdays
+                var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+                // Get the day index (0-6) from the Date object
+                var dayIndex = birthDate.getDay();
+
+                // Get the day of the week string using the index
+                var dayOfWeek = weekdays[dayIndex];
+
+                // Display the day of the week in a message box
+                alert("You were born on a " + dayOfWeek + ".");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Quiz</h1>
+
+        <label for="countries">Select Country : </label>
+        <select id="countries">
+            <option value="India">India</option>
+            <option value="Russia">Russia</option>
+        </select>
+
+        <label for="capitals">Select Capital : </label>
+        <select id="capitals">
+            <option value="New Delhi">New Delhi</option>
+            <option value="Moscow">Moscow</option>
+        </select>
+
+        <button id="btn">check answer</button>
+
+        <script>
+            const checkCapital = () => {
+                const inputCountry = document.getElementById("countries").value;
+                const inputCapital = document.getElementById("capitals").value;
+
+                const correctAns = {
+                    India: "New Delhi",
+                    Russia: "Moscow",
+                };
+
+                let ans = correctAns[inputCountry];
+
+                if (ans === inputCapital) {
+                    alert("Correct Answer");
+                } else {
+                    alert("Wrong Answer");
+                }
+            };
+
+            const btn = document.getElementById("btn");
+            btn.addEventListener("click", checkCapital);
+        </script>
+    </body>
+</html>

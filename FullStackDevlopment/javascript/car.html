@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Maruti Survey</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Maruti Survey Report</h2>
+
+        <table>
+            <tr>
+                <th></th>
+                <th>Maruti K10</th>
+                <th>Zen Astelo</th>
+                <th>Wagnor</th>
+                <th>Maruti SX4</th>
+            </tr>
+            <tr>
+                <td>Delhi</td>
+                <td><input type="number" name="delhi_k10" min="0" /></td>
+                <td><input type="number" name="delhi_zen" min="0" /></td>
+                <td><input type="number" name="delhi_wagnor" min="0" /></td>
+                <td><input type="number" name="delhi_sx4" min="0" /></td>
+            </tr>
+            <tr>
+                <td>Mumbai</td>
+                <td><input type="number" name="mumbai_k10" min="0" /></td>
+                <td><input type="number" name="mumbai_zen" min="0" /></td>
+                <td><input type="number" name="mumbai_wagnor" min="0" /></td>
+                <td><input type="number" name="mumbai_sx4" min="0" /></td>
+            </tr>
+            <tr>
+                <td>Chennai</td>
+                <td><input type="number" name="chennai_k10" min="0" /></td>
+                <td><input type="number" name="chennai_zen" min="0" /></td>
+                <td><input type="number" name="chennai_wagnor" min="0" /></td>
+                <td><input type="number" name="chennai_sx4" min="0" /></td>
+            </tr>
+            <tr>
+                <td>Kolkata</td>
+                <td><input type="number" name="kolkata_k10" min="0" /></td>
+                <td><input type="number" name="kolkata_zen" min="0" /></td>
+                <td><input type="number" name="kolkata_wagnor" min="0" /></td>
+                <td><input type="number" name="kolkata_sx4" min="0" /></td>
+            </tr>
+        </table>
+
+        <button onclick="generateReport()">Generate Report</button>
+
+        <script>
+            function generateReport() {
+                const data = {
+                    Delhi: {
+                        K10: parseInt(document.getElementsByName("delhi_k10")[0].value),
+                        Zen: parseInt(document.getElementsByName("delhi_zen")[0].value),
+                        Wagnor: parseInt(document.getElementsByName("delhi_wagnor")[0].value),
+                        SX4: parseInt(document.getElementsByName("delhi_sx4")[0].value),
+                    },
+                    Mumbai: {
+                        K10: parseInt(document.getElementsByName("mumbai_k10")[0].value),
+                        Zen: parseInt(document.getElementsByName("mumbai_zen")[0].value),
+                        Wagnor: parseInt(document.getElementsByName("mumbai_wagnor")[0].value),
+                        SX4: parseInt(document.getElementsByName("mumbai_sx4")[0].value),
+                    },
+                    Chennai: {
+                        K10: parseInt(document.getElementsByName("chennai_k10")[0].value),
+                        Zen: parseInt(document.getElementsByName("chennai_zen")[0].value),
+                        Wagnor: parseInt(document.getElementsByName("chennai_wagnor")[0].value),
+                        SX4: parseInt(document.getElementsByName("chennai_sx4")[0].value),
+                    },
+                    Kolkata: {
+                        K10: parseInt(document.getElementsByName("kolkata_k10")[0].value),
+                        Zen: parseInt(document.getElementsByName("kolkata_zen")[0].value),
+                        Wagnor: parseInt(document.getElementsByName("kolkata_wagnor")[0].value),
+                        SX4: parseInt(document.getElementsByName("kolkata_sx4")[0].value),
+                    },
+                };
+
+                // Here you can use 'data' to generate the report or send it to a server for processing.
+                console.log(data);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Telephone Number Extraction</title>
+        <style>
+            body {
+                font-family: monospace;
+            }
+            fieldset {
+                display: inline;
+            }
+            #areaCode,
+            #phoneNumberPart {
+                outline: none;
+                border: none;
+                border-bottom: 2px solid #45e445;
+            }
+
+            #phoneNumber {
+                outline: none;
+                border: 2px solid #45e445;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Telephone Number Extraction</h2>
+
+        <fieldset>
+            <legend>Telephone</legend>
+            <label for="phoneNumber">Enter Telephone Number (Format: (555)555-5555):</label>
+            <input type="text" id="phoneNumber" placeholder="(555)555-5555" />
+
+            <br /><br />
+
+            <label for="areaCode">Area Code:</label>
+            <input type="text" id="areaCode" readonly />
+
+            <br /><br />
+
+            <label for="phoneNumberPart">Phone Number:</label>
+            <input type="text" id="phoneNumberPart" readonly />
+
+            <br /><br />
+
+            <button id="btn">Extract</button>
+        </fieldset>
+
+        <script>
+            function extractNumber() {
+                let phoneNumber = document.getElementById("phoneNumber").value;
+
+                // Remove non-digit characters
+                phoneNumber = phoneNumber.replace(/\D/g, "");
+
+                // Check if the phone number has the correct length
+                if (phoneNumber.length === 10) {
+                    let areaCode = phoneNumber.substring(0, 3);
+                    let phoneNumberPart = phoneNumber.substring(3);
+
+                    // Display extracted parts
+                    document.getElementById("areaCode").value = areaCode;
+                    document.getElementById("phoneNumberPart").value = phoneNumberPart;
+                } else {
+                    alert("Invalid phone number format. Please enter in the format: (555)555-5555");
+                }
+            }
+
+            let btn = document.getElementById("btn");
+            btn.addEventListener("click", extractNumber);
+        </script>
+    </body>
+</html>

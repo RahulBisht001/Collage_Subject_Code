@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML5 Tags Demo</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <h1>Welcome to my website!</h1>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Article -->
+        <article>
+            <h2>About Me</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis nisl sed eros pulvinar
+                consequat. Nullam quis nulla et elit condimentum eleifend. Vestibulum vitae odio magna. Sed sed nibh eu
+                eros hendrerit elementum.
+            </p>
+        </article>
+
+        <!-- Iframe -->
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/QNCKlM4Uc90"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+
+        <!-- Video -->
+        <video width="420" height="240" controls>
+            <source src="movie.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Audio -->
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio tag.
+        </audio>
+
+        <!-- Embed -->
+        <embed src="example.swf" type="application/x-shockwave-flash" width="300" height="200" />
+
+        <bdi>Content ..</bdi>
+
+        <!-- Datalist -->
+        <label for="browser">Choose a browser:</label>
+        <input list="browsers" id="browser" name="browser" />
+        <datalist id="browsers">
+            <option value="Chrome"></option>
+            <option value="Firefox"></option>
+            <option value="Safari"></option>
+            <option value="Edge"></option>
+            <option value="Opera"></option>
+        </datalist>
+
+        <!-- Output -->
+        <output for="x y"></output>
+        <script>
+            function calculate() {
+                var x = parseInt(document.getElementById("x").value);
+                var y = parseInt(document.getElementById("y").value);
+                var result = x + y;
+                document.querySelector("output").textContent = result;
+            }
+        </script>
+        <input type="number" id="x" value="0" />
+        <input type="number" id="y" value="0" />
+        <button onclick="calculate()">Calculate</button>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
+s

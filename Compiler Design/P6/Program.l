@@ -4,8 +4,8 @@
 
 %%
 
-[\t\n" "]+ fprintf(yyout," ");
-.|\n fprintf(yyout,"%s",yytext);
+[\t" "]+ fprintf(yyout," ");
+. fprintf(yyout,"%s",yytext);
 
 %%
 

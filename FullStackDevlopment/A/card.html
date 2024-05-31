@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Credit Card Validation</title>
+    </head>
+    <body>
+        <h2>Credit Card Validation</h2>
+        <label for="cardNumber">Enter credit card number:</label>
+        <input type="text" id="cardNumber" placeholder="Enter credit card number" />
+        <button onclick="validateCard()">Validate</button>
+        <!-- <form action="">
+            <input type="text" id="validationResult" readonly />
+            <input type="reset" value="Reset" />
+        </form> -->
+        <p id="validationResult"></p>
+
+        <script>
+            function validateCard() {
+                var cardNumber = document.getElementById("cardNumber").value.replace(/\s/g, ""); // Remove whitespace
+
+                if (cardNumber.startsWith("4") && (cardNumber.length === 13 || cardNumber.length === 16)) {
+                    document.getElementById("validationResult").innerText = "Valid Visa card number.";
+                } else if (
+                    (cardNumber.startsWith("51") ||
+                        cardNumber.startsWith("52") ||
+                        cardNumber.startsWith("53") ||
+                        cardNumber.startsWith("54") ||
+                        cardNumber.startsWith("55")) &&
+                    cardNumber.length === 16
+                ) {
+                    document.getElementById("validationResult").innerText = "Valid Mastercard card number.";
+                } else if ((cardNumber.startsWith("34") || cardNumber.startsWith("37")) && cardNumber.length === 15) {
+                    document.getElementById("validationResult").innerText = "Valid American Express card number.";
+                } else if ((cardNumber.startsWith("6011") || cardNumber.startsWith("65")) && cardNumber.length === 16) {
+                    document.getElementById("validationResult").innerText = "Valid Discover card number.";
+                } else {
+                    document.getElementById("validationResult").innerText = "Invalid credit card number.";
+                }
+            }
+        </script>
+    </body>
+</html>

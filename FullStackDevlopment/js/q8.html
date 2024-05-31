@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Invert Image on Hover</title>
+        <style>
+            #imageContainer {
+                width: 300px;
+                height: 300px;
+                overflow: hidden;
+            }
+            #image {
+                width: 100%;
+                height: 100%;
+                transition: filter 0.5s ease; /* Smooth transition for the filter effect */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Invert Image on Hover</h1>
+
+        <div id="imageContainer">
+            <img
+                id="image"
+                src="https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg"
+                alt="Image"
+                onmouseover="invertImage()"
+                onmouseout="revertImage()"
+            />
+        </div>
+
+        <script>
+            function invertImage() {
+                document.getElementById("image").style.filter = "invert(100%)"; // Apply the invert filter
+            }
+
+            function revertImage() {
+                document.getElementById("image").style.filter = "none"; // Revert back to the original state
+            }
+        </script>
+    </body>
+</html>

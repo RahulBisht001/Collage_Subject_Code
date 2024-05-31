@@ -5,7 +5,6 @@ int chars=0,words=0,spaces=0,lines=0;
 
 
 %%
-
 [\n] {words++;lines++;}
 [ \t] {spaces++;words++;}
 [^\n\t] {chars++;}

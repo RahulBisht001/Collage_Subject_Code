@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label for="country">Select Country</label>
+        <select id="country">
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="USA">USA</option>
+        </select>
+
+        <label for="capital">Select Capital</label>
+        <select id="capital">
+            <option value="Delhi">Delhi</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="W dc">W dc</option>
+        </select>
+
+        <button id="btn">Check answer</button>
+        <script>
+            const btn = document.getElementById("btn");
+
+            function checkAnswer() {
+                const inputCountry = document.getElementById("country").value;
+                const inputCapital = document.getElementById("capital").value;
+
+                const correctAnswer = {
+                    India: "Delhi",
+                    Japan: "Tokyo",
+                    USA: "W dc",
+                };
+
+                let ans = correctAnswer[inputCountry];
+
+                if (inputCapital === ans) {
+                    alert("Correct answer");
+                } else {
+                    alert(`wrong answer! correct answer is ${ans} `);
+                }
+            }
+
+            btn.addEventListener("click", checkAnswer);
+        </script>
+    </body>
+</html>

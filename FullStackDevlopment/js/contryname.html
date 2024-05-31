@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Country Capitals Quiz</title>
+    </head>
+    <body>
+        <h2>Country Capitals Quiz</h2>
+        <label for="countries">Select a country:</label>
+        <select id="countries">
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Japan">Japan</option>
+        </select>
+        <br />
+        <br />
+        <label for="capitals">Select its capital:</label>
+        <select id="capitals">
+            <option value="Washington">Washington</option>
+            <option value="Ottawa">Ottawa</option>
+            <option value="Paris">Paris</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Tokyo">Tokyo</option>
+        </select>
+        <br /><br />
+        <button onclick="checkAnswer()">Check Answer</button>
+        <p id="result"></p>
+
+        <script>
+            function checkAnswer() {
+                var selectedCountry = document.getElementById("countries").value;
+                var selectedCapital = document.getElementById("capitals").value;
+
+                var correctCapitals = {
+                    USA: "Washington",
+                    Canada: "Ottawa",
+                    France: "Paris",
+                    Germany: "Berlin",
+                    Japan: "Tokyo",
+                };
+
+                var correctCapital = correctCapitals[selectedCountry];
+
+                var resultText = document.getElementById("result");
+
+                if (selectedCapital === correctCapital) {
+                    resultText.textContent = "Correct answer!";
+                } else {
+                    resultText.textContent =
+                        "Incorrect answer. The correct capital of " + selectedCountry + " is " + correctCapital + ".";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="display: flex">
+            <div>
+                <label for="foot">Foot:</label>
+                <input type="number" id="foot" placeholder="Enter foot value" min="0" />
+            </div>
+
+            <div>
+                <label for="inch">Inch:</label>
+                <input type="number" id="inch" placeholder="Enter inch value" min="0" />
+            </div>
+        </div>
+    </body>
+    <script>
+        const footInput = document.getElementById("foot");
+        const inchInput = document.getElementById("inch");
+
+        footInput.addEventListener("input", () => {
+            let FootVal = footInput.value;
+            let inchVal = FootVal * 12;
+
+            inchInput.value = inchVal;
+        });
+
+        inchInput.addEventListener("input", () => {
+            let inchVal = inchInput.value;
+            let footVal = inchVal / 12;
+
+            footInput.value = footVal;
+        });
+    </script>
+</html>

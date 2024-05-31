@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration</title>
+        <style></style>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter your name" />
+        <input type="password" placeholder="Enter your password" />
+        <input type="email" placeholder="Enter your email" />
+
+        <div id="error"></div>
+
+        <button onclick="validate()">Click to register</button>
+        <script>
+            let name = document.getElementsByTagName("input")[0];
+            let password = document.getElementsByTagName("input")[1];
+            let email = document.getElementsByTagName("input")[2];
+            let error = document.getElementById("error");
+
+            function validate() {
+                name = name.value.trim();
+                password = password.value.trim();
+                email = email.value.trim();
+
+                console.log(name);
+                console.log(password);
+                console.log(email);
+
+                <!-- validating the name -->
+                if (name.length < 6 || checkCharacters(name)) {
+                    error.innerHTML = "Enter a valid name";
+                    return;
+                }
+
+                if (password.length < 6) {
+                    error.innerHTML = "Enter a valid password";
+                    return;
+                }
+
+                if (isCorrectEmail(email) == false) {
+                    error.innerHTML = "Enter a valid email";
+                    return;
+                }
+
+                error.innerHTML = "You are successfully registered";
+            }
+
+            function checkCharacters(str) {
+                for (let i = 0; i < str.length; i++) {
+                    if (
+                        (str.charAt(i) >= "a" && str.charAt(i) <= "z") ||
+                        (str.charAt(i) >= "A" && str.charAt(i) <= "Z")
+                    ) {
+                        continue;
+                    }
+                    return true;
+                }
+                return false;
+            }
+
+            function isCorrectEmail(email) {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        </script>
+    </body>
+</html>
